@@ -45,7 +45,7 @@ def long_words(words):
     for word in words:
         if len(word) > 4:
             long_words.append[word]
-            
+
     return long_words
 
 
@@ -63,8 +63,12 @@ def n_long_words(words, n):
         >>> n_long_words(["I", "like", "apples", "bananas", "you"], 5)
         ['apples', 'bananas']
     """
+    longer_than_n = []
 
-    return ['the wrong thing']
+    for word in words:
+        if len(word) > n:
+            longer_than_n.append(word)
+    return longer_than_n
 
 
 def smallest_int(numbers):
