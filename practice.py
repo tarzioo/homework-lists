@@ -89,8 +89,15 @@ def smallest_int(numbers):
         >>> smallest_int([]) is None
         True
     """
+    smallest = None
 
-    return 100
+    for num in numbers:
+        smallest = num[0]
+        if num < smallest:
+            num = smallest
+
+
+    return smallest
 
 
 def largest_int(numbers):
