@@ -44,7 +44,7 @@ def long_words(words):
 
     for word in words:
         if len(word) > 4:
-            long_words.append[word]
+            long_words.append(word)
 
     return long_words
 
@@ -353,9 +353,8 @@ def reverse_list_in_place(items):
         ['I', 'love', 'cookies']
     """
 
-
-    return items[::-1]
-
+    items = items[::-1]
+    return items
 
 def duplicates(items):
     """Return list of words from input list which were duplicates.
@@ -382,11 +381,17 @@ def duplicates(items):
         >>> orig
         ['apple', 'apple', 'berry']
     """
-    multiples_in_list = []
+    duplicate_list = []
 
+    while len(items) > 1:
+        popped = items.pop()
 
+        for item in items:
+            if popped in items:
+                if popped not in duplicate_list:
+                    duplicate_list.append(popped)
 
-    return []
+    return sorted(duplicate_list)
 
 
 def find_letter_indices(words, letter):
@@ -422,7 +427,7 @@ def find_letter_indices(words, letter):
             position = word.index(letter)
         else:
             position = None
-        letter_list.append(position)      
+        letter_list.append(position)   
     return letter_list
 
 #####################################################################
