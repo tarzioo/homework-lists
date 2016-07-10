@@ -103,7 +103,16 @@ def every_other_item(items):
        ['you', 'are', 'good', 'at', 'code']
     """
 
-    return ['the wrong thing']
+    #create list to store every other item
+    every_other_list = []
+
+    #to get every other item, starting at the index of 0, all indexes that are
+    #odd will be skipped. Used % 2 == 0 to determine odd and even. If even, it is 
+    #every other item and is appended to every_other_list
+    for item in items:
+        if (items.index(item)) % 2 == 0:
+            every_other_list.append(item)
+    return every_other_list
 
 
 def largest_n_items(items, n):
