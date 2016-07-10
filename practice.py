@@ -326,6 +326,7 @@ def reverse_list(items):
     """
 
     reversed_list = items[::-1]
+
     return reversed_list
 
 
@@ -352,7 +353,8 @@ def reverse_list_in_place(items):
         ['I', 'love', 'cookies']
     """
 
-    return []
+
+    return items[::-1]
 
 
 def duplicates(items):
@@ -380,6 +382,9 @@ def duplicates(items):
         >>> orig
         ['apple', 'apple', 'berry']
     """
+    multiples_in_list = []
+
+
 
     return []
 
@@ -410,8 +415,15 @@ def find_letter_indices(words, letter):
     ("o" does not appear in "jumps", so the result for that input is
     `None`.)
     """
-
-    return []
+    letter_list = []
+    position = None
+    for word in words:
+        if letter in word:
+            position = word.index(letter)
+        else:
+            position = None
+        letter_list.append(position)      
+    return letter_list
 
 #####################################################################
 # END OF PRACTICE: You can ignore everything below.
