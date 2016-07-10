@@ -89,12 +89,15 @@ def smallest_int(numbers):
         >>> smallest_int([]) is None
         True
     """
-    smallest = None
+
+    if len(numbers) > 1:
+        smallest = numbers[0]
+    else:
+        smallest = None
 
     for num in numbers:
-        smallest = num[0]
         if num < smallest:
-            num = smallest
+            smallest = num
 
 
     return smallest
@@ -118,10 +121,12 @@ def largest_int(numbers):
         >>> largest_int([]) is None
         True
     """
-    largest = None
+    if len(numbers) > 1:
+        largest = numbers[0]
+    else:
+        largest = None
 
     for num in numbers:
-        largest = num[0]
         if num > largest:
             largest = num
     return largest
@@ -260,8 +265,14 @@ def average(numbers):
     (Think of the best way to handle an empty input list, though,
     a feel free to provide a good solution here.)
     """
+    amount_of_numbers = len(numbers)
 
-    return 0
+    sum_of = 0.0
+
+    for num in numbers:
+        sum_of += num
+
+    return float(sum_of/amount_of_numbers)
 
 
 def join_strings_with_comma(words):
@@ -281,7 +292,14 @@ def join_strings_with_comma(words):
         'Pretzel'
     """
 
-    return ""
+    words_all_together = ""
+
+    for word in words:
+        words_all_together += word
+        if word != words[-1]:
+            words_all_together += ", "
+
+    return words_all_together
 
 
 def reverse_list(items):
