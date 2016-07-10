@@ -107,7 +107,7 @@ def every_other_item(items):
     every_other_list = []
 
     #to get every other item, starting at the index of 0, all indexes that are
-    #odd will be skipped. Used % 2 == 0 to determine odd and even. If even, it is 
+    #odd will be skipped. Used % 2 == 0 to determine odd and even. If even, it is
     #every other item and is appended to every_other_list
     for item in items:
         if (items.index(item)) % 2 == 0:
@@ -137,7 +137,20 @@ def largest_n_items(items, n):
         [3, 3]
     """
 
-    return []
+    #sort items in list
+    items = sorted(items)
+    #Create empty list that will store the items from nth to the end
+    list_with_nth_numbers = []
+
+    #If n is zero, then it is returning an empty list. Return list_with_nth_numbers
+    if n == 0:
+        return list_with_nth_numbers
+    #Otherwise, add items from nth on by slicing and binding it to list_with_nth_numbers
+    else:
+        list_with_nth_numbers = items[-n:]
+
+    #return list_with_nth_numbers
+    return list_with_nth_numbers
 
 
 #####################################################################
