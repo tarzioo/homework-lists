@@ -16,8 +16,17 @@ def all_odd(numbers):
         >>> all_odd([2, -6, 8])
         []
     """
+    #create a list to store only the odd numbers from numbers list
+    odd_number_list = []
 
-    return ['the wrong thing']
+    #loop through all numbers in numbers list. If number in list has a 
+    #remainder from being divided by 2 then it is odd. Append it to 
+    #odd_number_list.
+    for num in numbers:
+        if num % 2 != 0:
+            odd_number_list.append(num)
+
+    return odd_number_list
 
 
 def print_indices(items):
