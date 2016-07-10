@@ -47,8 +47,9 @@ def print_indices(items):
         1 Jeep
         2 Volvo
     """
-
-    print "Nothing at all"
+    for item in items:
+        print items.index(item), item
+    return
 
 
 def foods_in_common(foods1, foods2):
