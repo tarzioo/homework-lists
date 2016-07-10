@@ -47,6 +47,8 @@ def print_indices(items):
         1 Jeep
         2 Volvo
     """
+
+    #Loop through items list and price each location followed by item
     for item in items:
         print items.index(item), item
     return
@@ -79,8 +81,12 @@ def foods_in_common(foods1, foods2):
         []
 
     """
+    # Combine union of lists food1 and food1 in common_food_items and set them
+    #as sets to get rid of duplicates
+    #Return common_food_items as list
+    common_food_items = set(foods1) & set(foods2)
 
-    return ['the wrong thing']
+    return list(common_food_items)
 
 
 def every_other_item(items):
